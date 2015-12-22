@@ -1,0 +1,5 @@
+讀檔://需宣告using System.IO;
+StreamReader myReader = new StreamReader("檔名.副檔名");
+
+關檔:
+myReader.Close();

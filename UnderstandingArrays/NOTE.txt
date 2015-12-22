@@ -1,0 +1,21 @@
+Array宣告:
+//無初始
+int[] a = new int[2];
+a[0] = 1;
+a[1] = 2;
+
+//有初始
+int[] b = new int[]{2, 3};
+
+//string陣列1
+string[] s = new string[]{"Apple", "Banana"};
+
+//string
+string str = "What do u like" + "for dinner?" //the two sentences will combined.
+
+//string to char
+char[] charArray = str.ToCharArray();
+
+
+//倒轉矩陣
+Array.Reverse(charArray);

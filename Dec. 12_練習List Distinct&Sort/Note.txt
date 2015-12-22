@@ -1,0 +1,11 @@
+Dec. 21 List Distinct&Sort
+
+List宣告 : 
+List<int> l = new List<int>();//empty List
+List<int> l = new List<int>{1,2,3};//initial List
+
+Distinct用法 ://去除重複
+IEnumerable<int> distinctNum = number.Distinct();
+
+Sort用法 ://預設升冪排序，降冪為-x.CompareTo(y)
+number.Sort((x, y) => x.CompareTo(y));
