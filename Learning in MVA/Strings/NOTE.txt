@@ -1,0 +1,43 @@
+string用法:
+string myString = string.Format("{0}!", "Bonzai");//Output: Bonzai!
+
+string myString = "My \"so called\" life";//Output: My "so called" life
+// \是特殊符號
+
+string myString = string.Format("{0:C}", 123.45);//Output: NT$123.45
+//會出現自己國家的貨幣符號
+
+string myString = string.Format("{0:N}", 123456789);//Output: 123.456.789.00
+
+string myString = string.Format("{0:P}", .123);//Output: 12.30%
+
+string myString = string.Format("Phone number: {0:(###) ###-####}", 1234567890);
+//Output: Phone number: (123) 456-7890
+//#的數目==後面的值
+
+string myString = "";
+for (int i = 0; i < 100; i++)
+{
+    //myString = myString + "--" + i.ToString();//ToString:轉字串
+    myString += "--" + i.ToString();//等於21行
+}//Output: --0...--99
+
+StringBuilder myString = new StringBuilder();//節省記憶體的用法
+for (int i = 0; i < 100; i++)
+{
+    myString.Append("--");
+    myString.Append(i);                
+}//Output: --0...--99
+Console.WriteLine(myString);//parameter can be filled like this: myString.ToString()
+
+string myString = "That summer we took threes across the board";
+myString = myString.Substring(5, 14);//Output: summer we took
+
+myString = myString.ToUpper();//Output: THAT SUMMER WE TOOK THREES ACROSS THE BOARD
+
+myString = myString.Replace(" ", "--");//Output: That--summer--we--took--threes--across--the--board
+
+string myString = " That summer we took threes across the board  ";
+myString = String.Format("Length before: {0} -- After: {1}", 
+			myString.Length, myString.Trim().Length);
+//Output: Length before: 46 -- After: 43

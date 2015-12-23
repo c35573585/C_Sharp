@@ -1,0 +1,16 @@
+時間宣告:
+DateTime myValue = DateTime.Now;//系統上目前時間
+Console.WriteLine(myValue.ToString());
+Console.WriteLine(myValue.ToUniversalTime());//GMT0
+Console.WriteLine(myValue.AddDays(3).ToLongDateString());//大後天
+Console.WriteLine(myValue.AddDays(-3).ToShortDateString());//大前天
+Console.WriteLine(myValue.Month.ToString());//月份
+
+
+DateTime myBirthday = new DateTime(1990, 12, 25);
+Console.WriteLine(myBirthday.ToShortDateString());//同系統日期格式
+
+
+DateTime myBirthday = DateTime.Parse("1990/12/25");//Parse: 將指定的日期時間轉換成對應的時間
+TimeSpan myAge = DateTime.Now.Subtract(myBirthday);//TimeSpan: 間隔時間, Subtract: 減去指定的時間
+Console.WriteLine(myAge.TotalDays);//TotalDays: 將結果以整數+小數的天數表示
