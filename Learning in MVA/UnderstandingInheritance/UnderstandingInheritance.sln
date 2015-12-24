@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstandingInheritance", "UnderstandingInheritance\UnderstandingInheritance.csproj", "{C491CC6E-B78E-4BAF-AFBA-48AEFD9BEDBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C491CC6E-B78E-4BAF-AFBA-48AEFD9BEDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C491CC6E-B78E-4BAF-AFBA-48AEFD9BEDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C491CC6E-B78E-4BAF-AFBA-48AEFD9BEDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C491CC6E-B78E-4BAF-AFBA-48AEFD9BEDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

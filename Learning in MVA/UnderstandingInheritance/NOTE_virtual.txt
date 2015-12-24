@@ -1,0 +1,58 @@
+繼承用法:
+class Truck : Car//:繼承Car類別
+    {
+        public int TowingCapacity { get; set; }
+
+        public override string FormatMe()//將繼承的衣服改成自己合身的，要加override
+        {
+            return String.Format("{0} - {1} - {2} Towings Units",
+                this.Make,
+                this.Model,
+                this.TowingCapacity);
+        }
+    }
+class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
+
+        public virtual string FormatMe()//add virtual to be overrided
+        {//為了讓Truck類別override，加上virtual。
+		 //virtual:我的衣服隨便你改，懶得改就醬穿吧
+		 //virtual:The base class provides a default implementation of a method that can be overridden
+            return String.Format("{0} - {1} - {2} - {3}",
+                this.Make,
+                this.Model,
+                this.Year,
+                this.Color);
+        }
+    }
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Car myCar = new Car();
+            myCar.Make = "BMW";
+            myCar.Model = "745li";
+            myCar.Year = 2005;
+            myCar.Color = "Black";
+            printCarDetails(myCar);
+
+            Truck myTruck = new Truck();
+            myTruck.Make = "Ford";
+            myTruck.Model = "F950";
+            myTruck.Year = 2006;
+            myTruck.Color = "Black";
+            myTruck.TowingCapacity = 1200;
+            printCarDetails(myTruck);
+
+            Console.ReadLine();
+        }
+        private static void printCarDetails(Car car)
+        {
+            Console.WriteLine("Here are the Car's details: {0}",
+                car.FormatMe());
+        }
+    }
