@@ -1,0 +1,6 @@
+自建Assembly library:
+new project--->class project(or any project)--->coding--->build/run
+--->bin folder--->debug--->find .dll file
+
+.dll匯入C#專案中使用:
+add--->reference--->browser--->choose&use
