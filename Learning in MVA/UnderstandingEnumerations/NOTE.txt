@@ -1,0 +1,49 @@
+enum列舉:由一組稱為列舉值清單的具名常數所構成的獨特型別
+；一種宣告方式，類似於宣告Constant，因其數值缺乏彈性，所以使用時機有限，
+但卻可以讓程式設計師享有Intellisence的便利性。
+技巧: 設計不同enum結構時，可將不同變數賦予相同的值。
+//enum: To constrain the number of values a given property or variable can be set to.
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+            Console.WriteLine("Type in a SuperHero's name to see his nickname:");
+            string userValue = Console.ReadLine();
+
+            SuperHero myValue;
+
+            if (Enum.TryParse<SuperHero>(userValue, true, out myValue))
+            {
+                switch (myValue)
+                {
+                    case SuperHero.Batman:
+                        Console.WriteLine("Caped Crusader");
+                        break;
+                    case SuperHero.Superman:
+                        Console.WriteLine("Man of Steel");
+                        break;
+                    case SuperHero.GreenLantern:
+                        Console.WriteLine("Emerald Knight");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Does not copute!");
+            }
+
+            //Console.WriteLine("Hello World!");
+            Console.ReadLine();
+        }
+    }
+
+enum SuperHero//enum最好寫在命名空間的位置
+    {
+        Batman,
+        Superman,
+        GreenLantern
+    }
