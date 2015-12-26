@@ -1,0 +1,35 @@
+try catch: 例外狀況
+//try後面可以有多個catch,此時例外狀況的排序很重要，把最具體/特殊的排前面，一般的擺後面
+try
+{
+    StreamReader myReader = new StreamReader("Values.txt");
+    string line = "";
+
+    while (line != null)
+    {
+        line = myReader.ReadLine();
+        if (line != null)
+        {
+            Console.WriteLine(line);
+        }
+    }
+    myReader.Close();
+}
+catch (DirectoryNotFoundException e)//找不到檔案或目錄
+{
+    Console.WriteLine("Couldn't find the file. Are you sure the DIREACTORY exists?");
+}
+catch (FileNotFoundException e)//存取不存在檔案
+{
+    Console.WriteLine("Couldn't find the file. Are you sure you're looking for the correct file?");
+}
+catch(Exception e)//應用程式執行時
+{
+    Console.WriteLine("Something didn't quite work correctly: {0}", e.Message);
+}
+finally
+{
+    //Perform any cleanup to roll back the data or close connections
+    //to files, database, network, etc.
+}
+Console.ReadLine();
