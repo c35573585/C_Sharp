@@ -1,0 +1,62 @@
+﻿<html>
+<head>
+</head>
+<body>
+<script language="javascript">
+	function createXMLHttpRequest(){
+		if(window.XMLHttpRequest)return new XMLHttpRequest();
+  		else  return new ActiveObject("Microsoft.XMLHTTP");
+	}
+	function check(){
+	   if( form.account.value == ""){
+		alert("帳號為空");
+		location.reload();
+		return false;
+	   }
+	   else if(form.password.value == "" ){
+		alert("密碼為空");
+		location.reload();
+		return false;
+	   }
+	   else if(form.username.value == "" ){
+		alert("姓名為空");
+		location.reload();
+		return false;
+	   }
+	   else if(form.mail.value == "" ){
+		alert("e-mail為空");
+		location.reload();
+		return false;
+	   }
+	}
+</script>
+<h1>註冊</h1>
+(*)為必填項目
+<form method='post' name='form' action='register.php' onSubmit="return check();">
+帳號(*)<input type='text' name='account' onblur='
+	var XHR = null;
+	XHR = createXMLHttpRequest();
+	var url="register.php?findaccount="+form.account.value;
+	XHR.open("GET",url, true);   
+	XHR.onreadystatechange =  function(){
+		if (XHR.readyState == 4){
+          if (XHR.status == 200)
+					document.getElementById("span01").innerHTML =XHR.responseText;
+		}
+	}
+    XHR.send(null);
+	'><span id="span01"></span><br>
+密碼(*)<input type='password'name='password'><br>
+姓名(*)<input type='text' name='username'><br>
+小名<input type='text' name='usernickname'><br>
+e-mail(*)<input type='text' name='mail'>(建議gmail)<br>
+年齡(*)<input type="radio" name="age" value="未滿" checked>未滿
+<input type="radio" name="age" value="已滿" >已滿
+&nbsp;&nbsp;&nbsp;18歲<br>
+性別
+<input type="radio" name="sex" value="男" checked>男
+<input type="radio" name="sex" value="女">女<br>
+<input type="submit" value="註冊">
+</form>
+</body>
+</html>

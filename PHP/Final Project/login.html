@@ -1,0 +1,78 @@
+﻿<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+	function createXMLHttpRequest(){
+		if(window.XMLHttpRequest)return new XMLHttpRequest();
+  		else  return new ActiveObject("Microsoft.XMLHTTP");
+	}
+	function check(){
+	   if( form.account.value == ""){
+		alert("帳號為空");
+		location.reload();
+		return false;
+	   }
+	   else if(form.password.value == "" ){
+		alert("密碼為空");
+		location.reload();
+		return false;
+	   }
+	   else if(form.name.value == "" ){
+		alert("姓名為空");
+		location.reload();
+		return false;
+	   }
+	   else if(form.mail.value == "" ){
+		alert("e-mail為空");
+		location.reload();
+		return false;
+	   }
+	}
+</script>
+<h1>E.C</h1>
+<h2>登入</h2>
+<form method='post' name='form' action='login.php' onSubmit="return check();">
+帳號<input type='text' name='account' onblur='
+	var XHR2 = null;
+	XHR2 = createXMLHttpRequest();
+	var url="login.php?findaccount="+form.account.value;
+	XHR2.open("GET",url, true);   
+	XHR2.onreadystatechange =  function(){
+		if (XHR2.readyState == 4){
+          if (XHR2.status == 200){
+				document.getElementById("span02").innerHTML =XHR2.responseText;
+		  }
+		}
+	}
+    XHR2.send(null);
+	'>
+	<span id="span02"></span><br>
+密碼<input type='password' name='password'><br>
+<input type="image" src="login_icon.gif" onClick="document.form.submit();">
+</form>
+
+<h2>註冊</h2>
+(*)為必填項目
+<form method='post' name='form' action='register.php' onSubmit="return check();">
+帳號(*)<input type='text' name='account' onblur='
+	var XHR = null;
+	XHR = createXMLHttpRequest();
+	var url="register.php?findaccount="+form.account.value;
+	XHR.open("GET",url, true);   
+	XHR.onreadystatechange =  function(){
+		if (XHR.readyState == 4){
+          if (XHR.status == 200)
+					document.getElementById("span01").innerHTML =XHR.responseText;
+		}
+	}
+    XHR.send(null);
+	'><span id="span01"></span><br>
+密碼(*)<input type='password'name='password'><br>
+姓名(*)<input type='text' name='name'><br>
+e-mail(*)<input type='text' name='mail'>(建議gmail)<br>
+<input type="image" src="sign-up.png" onClick="document.form.submit();">
+
+</form>
+</body>
+</html>
